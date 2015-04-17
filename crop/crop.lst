@@ -1,0 +1,19 @@
+# source file
+#------------
+main.png
+
+# x,   y,   w,  h, target file
+#------------------------------------
+ 64,  78, 240, 68, preview_normal.png
+336,  78, 240, 68, record_select.png
+ 64, 154, 240, 68, search_normal.png
+336, 154, 240, 68, network_normal.png
+ 64, 232, 240, 68, alarm_normal.png
+336, 232, 240, 68, device_normal.png
+ 64, 308, 240, 68, system_normal.png
+336, 308, 240, 68, expert_normal.png
+
+
+main.png
+ 68, 395,  46, 36, right_arrow.png
+122, 395, 412, 36, record_hint.png
