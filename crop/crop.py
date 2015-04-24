@@ -6,15 +6,17 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 __software__ = "Picture Crop"
 __version__ = "1.0"
 __author__ = "Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-__date__ = "2015/04/17 (initial version); 2015/04/17 (last revision)"
+__date__ = "2015/04/17 (initial version); 2015/04/24 (last revision)"
 
 import re
 import sys
 import os
 import argparse
 
-import Image
-from myutil import *
+from collections import defaultdict
+
+import Image, ImageDraw
+from myutil import prefix_info, main_basename, read_unicode, save_utf8_file
 
 
 #------------------------------------------------------------------------------
@@ -92,6 +94,31 @@ def crop_pics_from_screens(crop_lst, src_dir='screen', out_dir='out'):
             im.save('{}/{}'.format(out_dir, fn))
 
 
+def draw_rects_on_screens(crop_lst, src_dir='screen', out_dir='out',
+                          color='red'):
+    """Draw rectangles on screens descripted in a cropping list.
+
+    Arguments
+    ---------
+    crop_lst
+        a list of (screen, cropping list) pairs
+    src_dir
+        source directory that stores the source screen pictures
+    out_dir
+        output directory to store the target screen pictures
+    """
+    d = defaultdict(int)
+    for screen_fn, crops in crop_lst:
+        screen = Image.open('{}/{}'.format(src_dir, screen_fn))
+        draw = ImageDraw.Draw(screen)
+        for x, y, w, h, fn in crops:
+            draw.rectangle((x, y, x+w, y+h), outline='red')
+
+        d[screen_fn] += 1
+        fn = '{}/{}_{}.png'.format(out_dir, screen_fn, d[screen_fn])
+        screen.save(fn)
+
+
 def lst_to_yaml(crop_lst, out_fn='layout_coord.yaml'):
     """Generate a YAML file with coordinate layout.
 
@@ -123,6 +150,9 @@ def lst_to_yaml(crop_lst, out_fn='layout_coord.yaml'):
 def parse_args(args):
     def do_crop(args):
         crop_pics_from_screens(args.crop_lst, args.screen_dir, args.out_dir)
+
+    def do_rect(args):
+        draw_rects_on_screens(args.crop_lst, args.screen_dir, args.out_dir)
 
     def do_yaml(args):
         lst_to_yaml(args.crop_lst, args.outfile)
@@ -162,6 +192,21 @@ def parse_args(args):
     sub.add_argument('-o', '--out_dir', metavar='<directory>',
         type=check_dir,
         help='''assign a <directory> to store output cropped pictures.
+            The default directory is "%s".
+            ''' % sub.get_default('out_dir'))
+
+    # create the parser for the "rect" command
+    sub = subparsers.add_parser('rect', parents=[src],
+        help='Mark out rectangles from a crop-list file.')
+    sub.set_defaults(func=do_rect,
+        screen_dir='screen', out_dir='out')
+    sub.add_argument('-s', '--screen_dir', metavar='<directory>',
+        help='''assign a <directory> to read screen pictures.
+            The default directory is "%s".
+            ''' % sub.get_default('screen_dir'))
+    sub.add_argument('-o', '--out_dir', metavar='<directory>',
+        type=check_dir,
+        help='''assign a <directory> to store output screen pictures.
             The default directory is "%s".
             ''' % sub.get_default('out_dir'))
 

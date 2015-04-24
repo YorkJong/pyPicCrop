@@ -7,8 +7,8 @@ Picture Crop
 
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0001
-:Date: 2015-04-17
+:Revision: 0002
+:Date: 2015-04-24
 
 .. contents::
 
@@ -25,9 +25,10 @@ Top level
 usage: crop.exe [-h] [-v] {crop,yaml} ...
 
 positional arguments:
-  {crop,yaml}    commands
-    crop         Crop out pictures according to a crop-list file.
-    yaml         Generate a YAML file of screens with coordinate layouts.
+  {crop,rect,yaml}  commands
+    crop            Crop out pictures according to a crop-list file.
+    rect            Mark out rectangles from a crop-list file.
+    yaml            Generate a YAML file of screens with coordinate layouts.
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -48,6 +49,22 @@ optional arguments:
   -o <directory>, --out_dir <directory>
                         assign a <directory> to store output cropped
                         pictures. The default directory is "out".
+
+rect command
+------------
+usage: crop.exe rect [-h] [-s <directory>] [-o <directory>] crop-list-file
+
+positional arguments:
+  crop-list-file        The crop list file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s <directory>, --screen_dir <directory>
+                        assign a <directory> to read screen pictures. The
+                        default directory is "screen".
+  -o <directory>, --out_dir <directory>
+                        assign a <directory> to store output screen pictures.
+                        The default directory is "out".
 
 yaml command
 ------------
@@ -70,7 +87,8 @@ Version History
 ===============
 1.00
 ----
-Released 2015-04-17
+Released 2015-04-24
 * Added crop command to crop out pictures from screen pictures.
 * Added yaml command to generate a YAML file of screens with coordinate layouts.
+* Added rect command to mark cropped extents on screen pictures
 
