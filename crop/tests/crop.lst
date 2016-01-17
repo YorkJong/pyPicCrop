@@ -1,19 +1,61 @@
 # source file
 #------------
-main.png
+ipod-touch-5th-black.png
 
 # x,   y,   w,  h, target file
 #------------------------------------
- 64,  78, 240, 68, preview_normal.png
-336,  78, 240, 68, record_select.png
- 64, 154, 240, 68, search_normal.png
-336, 154, 240, 68, network_normal.png
- 64, 232, 240, 68, alarm_normal.png
-336, 232, 240, 68, device_normal.png
- 64, 308, 240, 68, system_normal.png
-336, 308, 240, 68, expert_normal.png
+117, 139, 62, 62, ico_FaceTime.png
+190, 139, 62, 62, ico_Calendar.png
+263, 139, 62, 62, ico_Photos.png
+336, 139, 62, 62, ico_Camera.png
+117, 223, 62, 62, ico_Weather.png
+190, 223, 62, 62, ico_Clock.png
+263, 223, 62, 62, ico_Maps.png
+336, 223, 62, 62, ico_Videos.png
+117, 307, 62, 62, ico_Notes.png
+190, 307, 62, 62, ico_Reminders.png
+263, 307, 62, 62, ico_Stocks.png
+336, 307, 62, 62, ico_GameCenter.png
+117, 391, 62, 62, ico_Newsstand.png
+190, 391, 62, 62, ico_iTunesStore.png
+263, 391, 62, 62, ico_AppStore.png
+336, 391, 62, 62, ico_iBooks.png
+117, 475, 62, 62, ico_Health.png
+190, 475, 62, 62, ico_Passbook.png
+263, 475, 62, 62, ico_Settings.png
+117, 580, 62, 62, ico_Messages.png
+190, 580, 62, 62, ico_Mail.png
+263, 580, 62, 62, ico_Safari.png
+336, 580, 62, 62, ico_Music.png
 
 
-main.png
- 68, 395,  46, 36, right_arrow.png
-122, 395, 412, 36, record_hint.png
+# source file
+#------------
+ipod-touch-5th-black.png
+
+# x,   y,   w,  h, target file
+#------------------------------------
+112, 203, 70, 15, txt_FaceTime.png
+185, 203, 70, 15, txt_Calendar.png
+258, 203, 70, 15, txt_Photos.png
+331, 203, 70, 15, txt_Camera.png
+112, 287, 70, 15, txt_Weather.png
+185, 287, 70, 15, txt_Clock.png
+258, 287, 70, 15, txt_Maps.png
+331, 287, 70, 15, txt_Videos.png
+112, 371, 70, 15, txt_Notes.png
+185, 371, 70, 15, txt_Reminders.png
+258, 371, 70, 15, txt_Stocks.png
+331, 371, 70, 15, txt_GameCenter.png
+112, 455, 70, 15, txt_Newsstand.png
+185, 455, 70, 15, txt_iTunesStore.png
+258, 455, 70, 15, txt_AppStore.png
+331, 455, 70, 15, txt_iBooks.png
+112, 539, 70, 15, txt_Health.png
+185, 539, 70, 15, txt_Passbook.png
+258, 539, 70, 15, txt_Settings.png
+112, 644, 70, 15, txt_Messages.png
+185, 644, 70, 15, txt_Mail.png
+258, 644, 70, 15, txt_Safari.png
+331, 644, 70, 15, txt_Music.png
+
