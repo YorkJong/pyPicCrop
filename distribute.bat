@@ -1,13 +1,10 @@
 @echo off
 
 set target=crop
-set ver_num=v1.0
+set ver_num=1.0
 set dist_name=PicCrop
 
-set dy=%date:~0,4%
-set dm=%date:~5,2%
-set dd=%date:~8,2%
-set dist_dir=%dist_name%-%ver_num%-bin-%dy%%dm%%dd%
+set dist_dir=%dist_name%-%ver_num%-bin
 
 if not exist %dist_dir% (
     md %dist_dir%

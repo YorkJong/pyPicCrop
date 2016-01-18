@@ -6,20 +6,19 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 
 # INSTALL #
 
-1. Download the compressed binary package file (e.g.,
-   `PicCrop-v1.0-bin-20160119.zip`) from the
-   [Download](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
-2. Uncompress the package
+1. Download a binary distribution of PicCrop (e.g., `PicCrop-1.0-bin.zip`)
+   from [Download](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
+2. Unzip the binary distribution.
 
 
 # QUICK START #
 
-1. Copy source (parent) pictures to the `screen` folder
+1. Copy source (parent) pictures to the `screen` folder.
 2. Edit `crop.lst`
 3. Run `rect.bat` to draw rectangles listing in `crop.lst`.
 4. Run `crop.bat` to crop sub-pictures from source pictures.
 5. Run `yaml.bat` to convert the crop-list-file (i.e., `crop.lst`) to the
-   YAML file (i.e., `layout_coord.yaml`)
+   YAML file (i.e., `layout_coord.yaml`).
 
 ## Note ##
 * Batch files `rect.bat`, `crop.bat`, and `yaml.bat` can be run in any order.
