@@ -9,7 +9,7 @@ set src_dir=%target%
 
 pyinstaller --onefile %src_dir%\%target%.py
 
-move dist\%target%.exe .
+move dist\%target%.exe bin
 
 del /Q %target%.spec
 rem del /Q *.spec

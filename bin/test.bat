@@ -1,5 +1,5 @@
 @echo off
-set crop=..\crop.py
+set crop=..\crop\crop.py
 
 set src=crop.lst
 set screen_dir=screen
