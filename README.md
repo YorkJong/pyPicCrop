@@ -7,7 +7,7 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 # Install #
 
 1. Download the compressed binary package file (e.g.,
-   `PicCrop-v1.0-bin-20160118.zip`) from the
+   `PicCrop-v1.0-bin-20160119.zip`) from the
    [Download](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
 2. Uncompress the package
 
@@ -17,13 +17,15 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 1. Copy source (parent) pictures to the `screen` folder
 2. Edit `crop.lst`
 3. Run `rect.bat` to draw rectangles listing in `crop.lst`.
- * The result pictues is put into `out` folder.
 4. Run `crop.bat` to crop sub-pictures from source pictures.
- * The sub-pictures is put into `out` folder.
 5. Run `yaml.bat` to convert the crop-list-file (i.e., `crop.lst`) to the
    YAML file (i.e., `layout_coord.yaml`)
 
-NOTE: You can run `rect.bat`, `crop.bat`, and `yaml.bat` in any order.
+NOTE:
+ 
+* You can run `rect.bat`, `crop.bat`, and `yaml.bat` in any order.
+* The result pictures of `rect.bat` is put into `out` folder.
+* The generated sub-pictures is put into `out` folder.
 
 A `crop.lst` looks like follows:
 ```
@@ -43,8 +45,8 @@ ipod-touch-5th-black.png
 ```
 
 * Symbol `#` is the comment prefix.
-* A source file following multiple target files
-* Each target begens with a x-coordinate, a y-coordinate, width, and height.
+* A source file follows multiple target files
+* Each target begens with a x-coordinate, a y-coordinate, a width, and a height.
 
 
 # Command Line #
