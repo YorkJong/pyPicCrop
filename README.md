@@ -1,10 +1,10 @@
-# Introduction #
+# INTRODUCTION #
 
 The main goal of this tool is to crop sub-pictures from parent pictures. This
 tool also allows format-converting from a corp-list-file to a YAML file.
 
 
-# Install #
+# INSTALL #
 
 1. Download the compressed binary package file (e.g.,
    `PicCrop-v1.0-bin-20160119.zip`) from the
@@ -12,7 +12,7 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 2. Uncompress the package
 
 
-# Quick Start #
+# QUICK START #
 
 1. Copy source (parent) pictures to the `screen` folder
 2. Edit `crop.lst`
@@ -21,14 +21,24 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 5. Run `yaml.bat` to convert the crop-list-file (i.e., `crop.lst`) to the
    YAML file (i.e., `layout_coord.yaml`)
 
-NOTE:
- 
-* You can run `rect.bat`, `crop.bat`, and `yaml.bat` in any order.
-* The result pictures of `rect.bat` is put into `out` folder.
-* The generated sub-pictures is put into `out` folder.
+## Note ##
+* Batch files `rect.bat`, `crop.bat`, and `yaml.bat` can be run in any order.
+* Result pictures of `rect.bat` are put into `out` folder.
+* Generated sub-pictures are put into `out` folder.
+
+## Crop List File ##
 
 A `crop.lst` looks like follows:
 ```
+parent1.png
+ 0,  0, 50, 50, crop1-1.png
+50, 50, 12, 34, crop1-2.png
+
+parent2.png
+ 0,  1, 30, 40, crop2-1.png
+90, 50, 33, 44, crop2-2.png
+50, 50, 33, 22, crop2-3.png
+
 # source file
 #------------
 ipod-touch-5th-black.png
@@ -39,17 +49,13 @@ ipod-touch-5th-black.png
 190, 139, 62, 62, ico_Calendar.png
 263, 139, 62, 62, ico_Photos.png
 336, 139, 62, 62, ico_Camera.png
-117, 223, 62, 62, ico_Weather.png
-190, 223, 62, 62, ico_Clock.png
-263, 223, 62, 62, ico_Maps.png
 ```
-
 * Symbol `#` is the comment prefix.
 * A source file follows multiple target files
-* Each target begens with a x-coordinate, a y-coordinate, a width, and a height.
+* Each target begins with an x-coordinate, a y-coordinate, a width, and a height.
 
 
-# Command Line #
+# COMMAND LINE #
 ## Top level ##
 ```
 usage: crop.exe [-h] [-v] {crop,yaml} ...
