@@ -7,7 +7,7 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 # INSTALL #
 
 1. Download a binary distribution of PicCrop (e.g., `PicCrop-1.0-bin.zip`)
-   from [Download](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
+   from [Downloads](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
 2. Uncompress the binary distribution.
 
 
