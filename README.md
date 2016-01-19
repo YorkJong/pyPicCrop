@@ -54,14 +54,14 @@ parent3.png
 * Symbol `#` is the comment prefix.
 
 ## An example ##
-Picture `ipod-touch-5th-black.png` looks as follows:
+Let's say I want to crop icons and texts from the iPod touch photograph (`ipod-touch-5th-black.png`):
 
-![](https://bitbucket.org/repo/M4KGbj/images/129087335-ipod-touch-5th-black.png)
+![ipod-touch-5th-black.png](https://bitbucket.org/repo/M4KGbj/images/129087335-ipod-touch-5th-black.png)
 
-To crop out icons and texts, we open a text editor to edit `crop.lst`:
+First, I edited `crop.lst` with a text editor. And key in the following statements:
 ```
-# source file
-#------------
+# source file to crop out 4 icons
+#--------------------------------
 ipod-touch-5th-black.png
 
 # x,  y,  w,  h, target file
@@ -71,8 +71,8 @@ ipod-touch-5th-black.png
 263, 139, 62, 62, ico_Photos.png
 336, 139, 62, 62, ico_Camera.png
 
-# source file
-#------------
+# source file to crop out 4 texts
+#--------------------------------
 ipod-touch-5th-black.png
 
 # x,  y,  w,  h, target file
@@ -83,7 +83,7 @@ ipod-touch-5th-black.png
 331, 203, 70, 15, txt_Camera.png
 ```
 
-After running `rect.bat`, we got the following two pictures. Areas given by `crop.lst` are marked with red rectangles.
+Then, I run `rect.bat` to get the following two pictures marking crop areas with red rectangles:
 
 `ipod-touch-5th-black.png_1.png`:
 
@@ -93,19 +93,21 @@ After running `rect.bat`, we got the following two pictures. Areas given by `cro
 
 ![ipod-touch-5th-black.png_2.png](https://bitbucket.org/repo/M4KGbj/images/3036161955-ipod-touch-5th-black.png_2.png)
 
-After running `crop.bat` we got icon pictures and text pictures as follows:
+After running `crop.bat`, I got the following icon pictures:
 
 ![ico_FaceTime.png](https://bitbucket.org/repo/M4KGbj/images/1888294300-ico_FaceTime.png)
 ![ico_Calendar.png](https://bitbucket.org/repo/M4KGbj/images/3171734867-ico_Calendar.png)
 ![ico_Photos.png](https://bitbucket.org/repo/M4KGbj/images/2511831279-ico_Photos.png)
 ![ico_Camera.png](https://bitbucket.org/repo/M4KGbj/images/1594669115-ico_Camera.png)
 
+and got the following text pictures:
+
 ![txt_FaceTime.png](https://bitbucket.org/repo/M4KGbj/images/723732507-txt_FaceTime.png)
 ![txt_Calendar.png](https://bitbucket.org/repo/M4KGbj/images/192556331-txt_Calendar.png)
 ![txt_Photos.png](https://bitbucket.org/repo/M4KGbj/images/1257264801-txt_Photos.png)
 ![txt_Camera.png](https://bitbucket.org/repo/M4KGbj/images/3259762654-txt_Camera.png)
 
-After running `yaml.bat` we got `layout_coord.yaml`:
+After running `yaml.bat` I got a YAML file (i.e., `layout_coord.yaml`):
 ```
 #!YAML
 
