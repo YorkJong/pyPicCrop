@@ -6,28 +6,30 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 
 # INSTALL #
 
-1. Download a binary distribution of PicCrop (e.g., `PicCrop-1.0-bin.zip`)
+1. Download a binary distribution of PicCrop (e.g., *PicCrop-1.0-bin.zip*)
    from [Downloads](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
 2. Uncompress the binary distribution.
 
 
 # QUICK START #
 
-1. Copy source (parent) pictures to the `screen` folder.
-2. Edit `crop.lst`
-3. Run `rect.bat` to draw rectangles listing in `crop.lst`.
-4. Run `crop.bat` to crop sub-pictures from source pictures.
-5. Run `yaml.bat` to convert the crop-list file (i.e., `crop.lst`) to the
-   YAML file (i.e., `layout_coord.yaml`).
+1. Copy source (parent) pictures to the *screen* folder.
+2. Edit *crop.lst*
+3. Run *rect.bat* to draw rectangles listing in *crop.lst*.
+4. Run *crop.bat* to crop sub-pictures from source pictures.
+5. Run *yaml.bat* to convert the crop-list file (i.e., *crop.lst*) to the
+   YAML file (i.e., *layout_coord.yaml*).
 
 ## Note ##
-* Batch files `rect.bat`, `crop.bat`, and `yaml.bat` can be run in any order.
-* Result pictures of `rect.bat` are put into `out` folder.
-* Generated sub-pictures are put into `out` folder.
+* Batch files *rect.bat*, *crop.bat*, and *yaml.bat* can be run in any order.
+* Result pictures of *rect.bat* are put into *out* folder.
+* Generated sub-pictures are put into *out* folder.
 
 ## Crop-list File ##
-A `crop.lst` looks like as follows:
+A *crop.lst* looks like as follows:
 ```
+#!sh
+
 # section 1
 parent1.png
  0,  0, 50, 50, crop1-1.png
@@ -46,21 +48,23 @@ parent3.png
 50, 50, 33, 22, crop3-3.png
 ```
 * A crop-list file lists multiple original-subpicture statements.
-* Each statement begins with a original picture filename (e.g., parent1.png),
-  and describes multiple subpictures (e.g., crop1-1.png).
+* Each statement begins with a original picture filename (e.g., *parent1.png*),
+  and describes multiple subpictures (e.g., *crop1-1.png*).
 * Each subpicture description involves with an x-coordinate, a y-coordinate, a
   width, a height, and a filename.
 * Symbol `#` is the comment prefix.
 
 ## An example ##
 Let's say that I want to crop icons and texts from the iPod touch photograph
-(`ipod-touch-5th-black.png`):
+named *ipod-touch-5th-black.png*:
 
 ![ipod-touch-5th-black.png](
 https://bitbucket.org/repo/M4KGbj/images/129087335-ipod-touch-5th-black.png)
 
-First, I edited `crop.lst`, and inputed in the following statements:
+First, I edited *crop.lst*, and inputed in the following statements:
 ```
+#!sh
+
 # source file to crop out 4 icons
 #--------------------------------
 ipod-touch-5th-black.png
@@ -84,20 +88,20 @@ ipod-touch-5th-black.png
 331, 203, 70, 15, txt_Camera.png
 ```
 
-Second, I run `rect.bat` to generate the following two pictures on those marking
+Second, I run *rect.bat* to generate the following two pictures on those marking
 crop areas with red rectangles:
 
-`ipod-touch-5th-black.png_1.png`:
+**ipod-touch-5th-black.png_1.png**:
 
 ![ipod-touch-5th-black.png_1.png](
 https://bitbucket.org/repo/M4KGbj/images/3633704517-ipod-touch-5th-black.png_1.png)
 
-`ipod-touch-5th-black.png_2.png`:
+**ipod-touch-5th-black.png_2.png**:
 
 ![ipod-touch-5th-black.png_2.png](
 https://bitbucket.org/repo/M4KGbj/images/3036161955-ipod-touch-5th-black.png_2.png)
 
-After running `crop.bat`, I got the following icon pictures:
+After running *crop.bat*, I got the following *icon* pictures:
 
 ![ico_FaceTime.png](
 https://bitbucket.org/repo/M4KGbj/images/1888294300-ico_FaceTime.png)
@@ -108,7 +112,7 @@ https://bitbucket.org/repo/M4KGbj/images/2511831279-ico_Photos.png)
 ![ico_Camera.png](
 https://bitbucket.org/repo/M4KGbj/images/1594669115-ico_Camera.png)
 
-and got the following text pictures:
+and got the following *text* pictures:
 
 ![txt_FaceTime.png](
 https://bitbucket.org/repo/M4KGbj/images/723732507-txt_FaceTime.png)
@@ -119,7 +123,7 @@ https://bitbucket.org/repo/M4KGbj/images/1257264801-txt_Photos.png)
 ![txt_Camera.png](
 https://bitbucket.org/repo/M4KGbj/images/3259762654-txt_Camera.png)
 
-After running `yaml.bat` I got a YAML file (i.e., `layout_coord.yaml`):
+After running *yaml.bat* I got a YAML file (i.e., *layout_coord.yaml*):
 ```
 #!YAML
 
