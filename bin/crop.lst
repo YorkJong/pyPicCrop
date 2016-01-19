@@ -2,7 +2,7 @@
 #------------
 ipod-touch-5th-black.png
 
-# x,   y,   w,  h, target file
+# x,   y,  w,  h, target file
 #------------------------------------
 117, 139, 62, 62, ico_FaceTime.png
 190, 139, 62, 62, ico_Calendar.png
@@ -33,7 +33,7 @@ ipod-touch-5th-black.png
 #------------
 ipod-touch-5th-black.png
 
-# x,   y,   w,  h, target file
+# x,   y,  w,  h, target file
 #------------------------------------
 112, 203, 70, 15, txt_FaceTime.png
 185, 203, 70, 15, txt_Calendar.png
