@@ -61,7 +61,7 @@ named *ipod-touch-5th-black.png*:
 ![ipod-touch-5th-black.png](
 https://bitbucket.org/repo/M4KGbj/images/129087335-ipod-touch-5th-black.png)
 
-First, I edited *crop.lst*, and inputed in the following statements:
+First, I edited *crop.lst*, and inputed the following statements:
 ```
 #!sh
 
