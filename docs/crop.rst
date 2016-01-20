@@ -1,22 +1,30 @@
-====
-Crop
-====
-------------
-Picture Crop
-------------
+=======
+PicCrop
+=======
+----------------
+Picture Cropping
+----------------
 
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0002
-:Date: 2015-04-24
+:Revision: 0003
+:Date: 2016-01-20
 
 .. contents::
 
 
 Introduction
 ============
-This main goal of this tool is to crop sub-pictures from screen pictures. This
-tool also allows format-converting from a corp-list-file to a YAML file.
+PicCrop is an open source Python application to crop sub-pictures from parent
+pictures. This tool also allows format-converting from a corp-list file to a
+YAML layout file.
+
+A crop-list file lists parent pictures and describes sub-pictures to crop.
+
+A YAML layout file describes multiple picture layouts of screens. I invented
+the syntax under the standard YAML and used to assemble separated sub- pictures
+into whole-pictures.
+
 
 Usage
 =====

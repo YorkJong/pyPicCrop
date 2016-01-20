@@ -1,35 +1,41 @@
-# INTRODUCTION #
+# PicCrop #
 
-The main goal of this tool is to crop sub-pictures from parent pictures. This
-tool also allows format-converting from a corp-list-file to a YAML file.
+PicCrop is an open source Python application to crop sub-pictures from parent
+pictures. This tool also allows format-converting from a corp-list file to a
+YAML layout file.
+
+A crop-list file lists parent pictures and describes sub-pictures to crop.
+
+A YAML layout file describes multiple picture layouts of screens. I invented
+the syntax under the standard YAML and used to assemble separated sub- pictures
+into whole-pictures.
 
 
-# INSTALL #
+## Install ##
 
 1. Download a binary distribution of PicCrop (e.g., *PicCrop-1.0-bin.zip*)
    from [Downloads](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
 2. Uncompress the binary distribution.
 
 
-# QUICK START #
+## Getting Started ##
 
-1. Copy source (parent) pictures to the *screen* folder.
-2. Edit *crop.lst*
-3. Run *rect.bat* to draw rectangles listing in *crop.lst*.
-4. Run *crop.bat* to crop sub-pictures from source pictures.
-5. Run *yaml.bat* to convert the crop-list file (i.e., *crop.lst*) to the
+1. Install PicCrop.
+2. Copy source (parent) pictures to the *screen* folder.
+3. Edit *crop.lst*
+4. Run *rect.bat* to draw rectangles listing in *crop.lst*.
+5. Run *crop.bat* to crop sub-pictures from source pictures.
+6. Run *yaml.bat* to convert the crop-list file (i.e., *crop.lst*) to the
    YAML file (i.e., *layout_coord.yaml*).
 
-## Note ##
+### Note ###
 * Batch files *rect.bat*, *crop.bat*, and *yaml.bat* can be run in any order.
 * Result pictures of *rect.bat* are put into *out* folder.
 * Generated sub-pictures are put into *out* folder.
 
-## Crop-list File ##
+### Crop-list File ###
 A *crop.lst* looks like as follows:
-```
-#!sh
-
+```sh
 # section 1
 parent1.png
  0,  0, 50, 50, crop1-1.png
@@ -47,40 +53,39 @@ parent3.png
 90, 50, 33, 44, crop3-2.png
 50, 50, 33, 22, crop3-3.png
 ```
-* A crop-list file lists multiple original-subpicture statements.
-* Each statement begins with a original picture filename (e.g., *parent1.png*),
-  and describes multiple subpictures (e.g., *crop1-1.png*).
-* Each subpicture description involves with an x-coordinate, a y-coordinate, a
-  width, a height, and a filename.
+* A crop-list file lists multiple original-subpicture sections.
+* Each section begins with a original picture filename (e.g., *parent1.png*),
+  and describes multiple statements of sub-pictures (e.g., *crop1-1.png*).
+* Each sub-picture statement lists an area (i.e., x, y, w, h) and a target
+  filename.
 * Symbol `#` is the comment prefix.
 
-## An example ##
+### An Example ###
 Let's say that I want to crop icons and texts from the iPod touch photograph
 named *ipod-touch-5th-black.png*:
 
 ![ipod-touch-5th-black.png](
 https://bitbucket.org/repo/M4KGbj/images/129087335-ipod-touch-5th-black.png)
 
-First, I edited *crop.lst*, and inputed the following statements:
-```
-#!sh
-
+#### First, I edited *crop.lst* and inputed 2 sections as below:
+```sh
 # source file to crop out 4 icons
 #--------------------------------
 ipod-touch-5th-black.png
 
-# x,  y,  w,  h, target file
+# x,  y,  w,  h,  target file
 #------------------------------------
 117, 139, 62, 62, ico_FaceTime.png
 190, 139, 62, 62, ico_Calendar.png
 263, 139, 62, 62, ico_Photos.png
 336, 139, 62, 62, ico_Camera.png
 
+
 # source file to crop out 4 texts
 #--------------------------------
 ipod-touch-5th-black.png
 
-# x,  y,  w,  h, target file
+# x,  y,  w,  h,  target file
 #------------------------------------
 112, 203, 70, 15, txt_FaceTime.png
 185, 203, 70, 15, txt_Calendar.png
@@ -88,20 +93,25 @@ ipod-touch-5th-black.png
 331, 203, 70, 15, txt_Camera.png
 ```
 
-Second, I run *rect.bat* to generate the following two pictures on those marking
-crop areas with red rectangles:
+#### Second, I run *rect.bat* to generate the following 2 pictures:
 
 **ipod-touch-5th-black.png_1.png**:
 
 ![ipod-touch-5th-black.png_1.png](
 https://bitbucket.org/repo/M4KGbj/images/3633704517-ipod-touch-5th-black.png_1.png)
 
+* The above picture marks the icon areas with red rectangles.
+
 **ipod-touch-5th-black.png_2.png**:
 
 ![ipod-touch-5th-black.png_2.png](
 https://bitbucket.org/repo/M4KGbj/images/3036161955-ipod-touch-5th-black.png_2.png)
 
-After running *crop.bat*, I got the following *icon* pictures:
+* The above picture marks the text areas with red rectangles.
+
+#### Then, I run *crop.bat* to get the following pictures:
+
+**icon** pictures:
 
 ![ico_FaceTime.png](
 https://bitbucket.org/repo/M4KGbj/images/1888294300-ico_FaceTime.png)
@@ -112,7 +122,7 @@ https://bitbucket.org/repo/M4KGbj/images/2511831279-ico_Photos.png)
 ![ico_Camera.png](
 https://bitbucket.org/repo/M4KGbj/images/1594669115-ico_Camera.png)
 
-and got the following *text* pictures:
+**text** pictures:
 
 ![txt_FaceTime.png](
 https://bitbucket.org/repo/M4KGbj/images/723732507-txt_FaceTime.png)
@@ -123,10 +133,8 @@ https://bitbucket.org/repo/M4KGbj/images/1257264801-txt_Photos.png)
 ![txt_Camera.png](
 https://bitbucket.org/repo/M4KGbj/images/3259762654-txt_Camera.png)
 
-After running *yaml.bat* I got a YAML file (i.e., *layout_coord.yaml*):
-```
-#!YAML
-
+#### After running *yaml.bat* I got a YAML file (i.e., *layout_coord.yaml*):
+```yaml
 # Generated by the Picture Crop v1.0
 #    !author: Jiang Yu-Kuan <yukuan.jiang@gmail.com>
 #    !trail: crop.py yaml -olayout_coord.yaml crop.lst
@@ -151,8 +159,8 @@ parts:
 ...
 ```
 
-# COMMAND LINE #
-## Top level ##
+## Command Line ##
+### Top level ###
 ```
 usage: crop.exe [-h] [-v] {crop,yaml} ...
 
@@ -167,7 +175,7 @@ optional arguments:
   -v, --version  show program's version number and exit
 ```
 
-## crop command ##
+### crop command ###
 ```
 usage: crop.exe crop [-h] [-s <directory>] [-o <directory>] crop-list-file
 
@@ -184,7 +192,7 @@ optional arguments:
                         pictures. The default directory is "out".
 ```
 
-## rect command ##
+### rect command ###
 ```
 usage: crop.exe rect [-h] [-s <directory>] [-o <directory>] crop-list-file
 
@@ -201,7 +209,7 @@ optional arguments:
                         The default directory is "out".
 ```
 
-## yaml command ##
+### yaml command ###
 ```
 usage: crop.exe yaml [-h] [-o <file>] crop-list-file
 
