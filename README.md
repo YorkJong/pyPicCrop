@@ -53,7 +53,7 @@ parent3.png
 90, 50, 33, 44, crop3-2.png
 50, 50, 33, 22, crop3-3.png
 ```
-* A crop-list file lists multiple original-subpicture sections.
+* A crop-list file can list multiple original-subpicture sections.
 * Each section begins with a original picture filename (e.g., *parent1.png*),
   and describes multiple statements of sub-pictures (e.g., *crop1-1.png*).
 * Each sub-picture statement lists an area (i.e., x, y, w, h) and a target
