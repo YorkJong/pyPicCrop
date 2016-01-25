@@ -20,9 +20,8 @@ call build.bat %target% SkipPause
 
 echo.
 echo =^> Copying distributed files
-xcopy /Y bin %dist_dir%\
+xcopy /Y /E bin %dist_dir%\
 del %dist_dir%\*test.bat
-del %dist_dir%\clean.bat
 copy README.md %dist_dir%\README.txt
 
 echo.
