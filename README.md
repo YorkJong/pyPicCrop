@@ -23,15 +23,16 @@ into whole-pictures.
 1. Install PicCrop.
 2. Copy source (parent) pictures to the *screen* folder.
 3. Edit *crop.lst*
-4. Run *rect.bat* to draw rectangles listing in *crop.lst*.
-5. Run *crop.bat* to crop sub-pictures from source pictures.
-6. Run *yaml.bat* to convert the crop-list file (i.e., *crop.lst*) to the
+4. Run `rect.bat` to draw rectangles listing in *crop.lst*.
+5. Run `crop.bat` to crop sub-pictures from source pictures.
+6. Run `yaml.bat` to convert the crop-list file (i.e., *crop.lst*) to the
    YAML file (i.e., *layout_coord.yaml*).
 
 ### Note ###
 * Batch files *rect.bat*, *crop.bat*, and *yaml.bat* can be run in any order.
 * Result pictures of *rect.bat* are put into *out* folder.
 * Generated sub-pictures are put into *out* folder.
+* Run `clean.bat` to remove the generated files
 
 ### Crop-list File ###
 A *crop.lst* looks like as follows:
