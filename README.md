@@ -14,8 +14,10 @@ into whole-pictures.
 ## Install ##
 
 1. Download a binary distribution of PicCrop (e.g., *PicCrop-1.0-bin.zip*)
-   from [Downloads](https://bitbucket.org/YorkJong/pypiccrop/downloads) page.
+   from [Downloads][] page.
 2. Uncompress the binary distribution.
+
+[Downloads]: https://bitbucket.org/YorkJong/pypiccrop/downloads
 
 
 ## Getting Started ##
