@@ -6,7 +6,7 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 __software__ = "Picture Crop"
 __version__ = "1.0"
 __author__ = "Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-__date__ = "2015/04/17 (initial version); 2015/04/24 (last revision)"
+__date__ = "2015/04/17 (initial version); 2016/04/27 (last revision)"
 
 import re
 import sys
@@ -15,7 +15,7 @@ import argparse
 
 from collections import defaultdict
 
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 from myutil import prefix_info, main_basename, read_unicode, save_utf8_file
 
 
