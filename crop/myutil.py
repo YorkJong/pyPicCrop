@@ -3,7 +3,7 @@
 This module put my utility functions
 """
 __author__ = "Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-__date__ = "2012/03/01 (initial version) ~ 2015/04/17 (last revision)"
+__date__ = "2012/03/01 (initial version) ~ 2016/04/27 (last revision)"
 
 import re
 import os
@@ -35,9 +35,8 @@ def read_unicode(fn):
 def save_utf8_file(fn, lines):
     """Save string lines into an UTF8 text files.
     """
-    out_file = open(fn, 'w')
-    out_file.write("\n".join(lines).encode('utf-8'))
-    out_file.close()
+    with open(fn, "w") as out_file:
+        out_file.write("\n".join(lines).encode("utf-8"))
 
 
 def main_basename(path):
