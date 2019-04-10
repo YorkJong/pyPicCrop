@@ -6,7 +6,7 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 __software__ = "Picture Crop"
 __version__ = "1.0"
 __author__ = "Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-__date__ = "2015/04/17 (initial version); 2016/04/27 (last revision)"
+__date__ = "2015/04/17 (initial version); 2019/04/10 (last revision)"
 
 import re
 import sys
@@ -32,7 +32,7 @@ def prefix_authorship(lines, comment_mark='//'):
 
 def is_numeric(str):
     try:
-        offset = int(eval(str))
+        _offset = int(eval(str))
     except:
         return False
     return True
@@ -53,8 +53,9 @@ def read_list(fn='crop.lst'):
                 print >> sys.stderr, msg
 
     lines = read_unicode(fn).splitlines()
-    pat = re.compile('\s*,\s*')
+    pat = re.compile(r'\s*,\s*')
     ret = []
+    val = []
     key = None
 
     for line_no, line in enumerate(lines):
@@ -137,7 +138,7 @@ def lst_to_yaml(crop_lst, out_fn='layout_coord.yaml'):
         lines += ['layout: {kind: coordinate}']
         lines += ['align: left']
         lines += ['parts:']
-        for x, y, w, h, fn in crops:
+        for x, y, _w, _h, fn in crops:
             lines += ['  - {{image: {}, coord: [{}, {}]}}'.format(fn, x, y)]
     lines += ['...']
 
