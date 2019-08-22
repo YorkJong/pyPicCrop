@@ -6,9 +6,9 @@ tool also allows format-converting from a corp-list-file to a YAML file.
 __software__ = "Picture Crop"
 __version__ = "1.0"
 __author__ = "Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-__date__ = "2015/04/17 (initial version); 2019/04/10 (last revision)"
+__date__ = "2015/04/17 (initial version); 2019/08/22 (last revision)"
 
-import re
+import shlex
 import sys
 import os
 import argparse
@@ -53,7 +53,6 @@ def read_list(fn='crop.lst'):
                 print >> sys.stderr, msg
 
     lines = read_unicode(fn).splitlines()
-    pat = re.compile(r'\s*,\s*')
     ret = []
     val = []
     key = None
@@ -62,7 +61,7 @@ def read_list(fn='crop.lst'):
         l = line.split("#", 1)[0].strip()
         if len(l) == 0:
             continue
-        row = pat.split(l)
+        row = [x.strip(',') for x in shlex.split(l)]
         check_row(row)
         if len(row) == 1:
             if key and val:

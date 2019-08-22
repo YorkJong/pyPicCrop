@@ -1,7 +1,7 @@
 @echo off
 
 set target=crop
-set ver_num=1.0
+set ver_num=1.1
 set dist_name=PicCrop
 
 set dist_dir=%dist_name%-%ver_num%-bin

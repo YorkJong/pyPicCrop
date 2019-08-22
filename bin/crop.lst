@@ -4,8 +4,8 @@ ipod-touch-5th-black.png
 
 # x,   y,  w,  h, target file
 #------------------------------------
-117, 139, 62, 62, ico_FaceTime.png
-190, 139, 62, 62, ico_Calendar.png
+117  139  62  62  ico_FaceTime.png
+190, 139, 62, 62, "ico Calendar.png"
 263, 139, 62, 62, ico_Photos.png
 336, 139, 62, 62, ico_Camera.png
 117, 223, 62, 62, ico_Weather.png

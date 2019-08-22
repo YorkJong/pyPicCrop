@@ -13,7 +13,7 @@ into whole-pictures.
 
 ## Install ##
 
-1. Download a binary distribution of PicCrop (e.g., *PicCrop-1.0-bin.zip*)
+1. Download a binary distribution of PicCrop (e.g., *PicCrop-1.1-bin.zip*)
    from [Downloads][] page.
 2. Uncompress the binary distribution.
 
@@ -46,8 +46,8 @@ parent1.png
 
 # section 2
 parent2.png
- 0,  1, 30, 40, crop2-1.png
-90, 50, 33, 44, crop2-2.png
+ 0,  1, 30, 40, "crop 2-1.png"  # support filename with quoted string
+90  50  33  44  crop2-2.png     # support space separating
 50, 50, 33, 22, crop2-3.png
 
 # section 3
