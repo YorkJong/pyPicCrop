@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'PicCrop',
-    version = '1.0',
+    version = '1.1',
     description = 'Picture Cropping',
     license = 'Creative Commons Attribution-Noncommercial-Share Alike license',
     long_description = open('README.md').read(),
